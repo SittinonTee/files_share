@@ -1,8 +1,15 @@
 const config = {
   app: {
-    port: process.env.PORT || 3000,
+    port:process.env.NEXT_PUBLIC_API_URL,
   },
-  socketUrl: process.env.NEXT_PUBLIC_SOCKET_URL || "http://192.168.1.101:3001",
+  // socketUrl: process.env.NEXT_PUBLIC_SOCKET_URL || "http://192.168.1.101:3001",
+  socketUrl:process.env.NEXT_PUBLIC_SOCKET_URL ,
+
+  iceServers:{
+    username:process.env.NEXT_PUBLIC_TURN_USERNAME,
+    credential:process.env.NEXT_PUBLIC_TURN_CREDENTIAL
+  }
+
   // ,
   // db: {
   //     main: {

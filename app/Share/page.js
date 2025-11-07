@@ -1,11 +1,16 @@
+//Share//page.js
+
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
-
+import config from "../config.js";
+// const port = config.app.port
 
 
 export default function Page() {
-
+  useEffect(() => {
+    console.log("✅ process.env.NEXT_PUBLIC_SOCKET_URL =",config.app.port);
+  }, []);
   
   const [connectionStatus, setConnectionStatus] = useState("ยังไม่ได้เชื่อมต่อ");
   const [roomId, setRoomId] = useState("");
@@ -26,7 +31,14 @@ export default function Page() {
   const receivedBytesRef = useRef(0);
 
   useEffect(() => {
-    const SOCKET_URL = "http://192.168.1.101:3001";
+    const SOCKET_URL = config.socketUrl;
+
+
+
+    console.log(SOCKET_URL)
+
+
+
     const socket = io(SOCKET_URL);
     socketRef.current = socket;
 
@@ -40,8 +52,10 @@ export default function Page() {
             "turn:global.relay.metered.ca:443",
             "turns:global.relay.metered.ca:443?transport=tcp",
           ],
-          username: "9c66677d31d8d7374d19fad2",
-          credential: "rno9nKuv627d1Z/c",
+          username:config.iceServers.username,
+          credential:config.iceServers.credential
+                    // username: "9c66677d31d8d7374d19fad2",
+          // credential: "rno9nKuv627d1Z/c",
         },
       ],
     };
