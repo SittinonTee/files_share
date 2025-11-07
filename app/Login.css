@@ -1,0 +1,71 @@
+.Loginpage {
+    background-image: url('/img/bg-Login.png');
+    width: 100vw;
+    height: 100vh;
+    margin: 100;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items:center;
+    /* align-content:center */
+    /* flex-direction: column;  */
+    justify-content: center;
+}
+
+.Boxcenter {
+    display: flex;
+    /* background-color: blueviolet ; */
+    /* opacity: 50%; */
+    width: calc(100vw - 130px);    
+    height: calc(100vh - 90px);   
+    /* /* margin: 100px;                
+    border-radius: 8px; */
+  }
+
+
+  .Boxitem {
+    flex: 1;                       
+    /* background-color: aqua; */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+
+  }
+
+
+  .TF-User,  .TF-password{
+    width: 60%;
+    height: 20px;
+    /* border-radius: 50px ; */
+    /* background-color: aqua; */
+
+  }
+
+ 
+  .TF-User .MuiOutlinedInput-root ,.TF-password .MuiOutlinedInput-root {
+    border-radius: 20px; 
+    /* border: solid 4px black; */
+    background-color: rgb(224, 224, 224);
+
+  }
+
+
+/* 
+  .inpurbox{
+    margin: 20px;
+  }
+ */
+
+
+/*   
+  .TF-password .MuiInputLabel-root {
+    border-radius: 20px;
+  } */
+/*   
+  .TF-password .MuiIconButton-root {
+    border-radius: 50%;
+  } */
